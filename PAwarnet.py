@@ -194,11 +194,9 @@ def tampilanadmin():
                 elif pilih1 == "3":
                     break
                 else:
-                    print("Input Salah")
+                    print("Inputan Salah")
         elif pilih == "5":
-            print("Kamu telah keluar dari program")
-            print("Terimakasih!!!")
-            exit()
+            break()
         else :
             print("masukan inputan dengan benar")
             
@@ -218,8 +216,31 @@ def tampilanuser():
             user.append(data)
         elih pilih == "2":
             user.print_list()
-        elif pilih == "3"
+        elif pilih == "3":
             break
         else:
             print("Pilihan tidak valid")
         
+def tampilan():
+    while True:
+        print("=================================")
+        print("=======    ASD WARNET    ========")
+        print("=================================")
+        print("= # MENU                        =")
+        print("= 1. Login user                 =")
+        print("= 2. Login admin                =")
+        print("= 3. Exit                       =")
+        print("=================================")
+        pilih = input("Masukkan pilihan nomor yang ingin dilakukan : ")
+        if pilih == "1":
+            tampilanuser()
+        elif pilih == "2":
+            tampilanadmin()
+        elif pilih == "3":
+            print("Kamu telah keluar dari program")
+            print("Terimakasih!!!")
+            break
+        else:
+            print("Pilihan tidak valid. Silahkan coba lagi.)
+                  
+tampilan()
