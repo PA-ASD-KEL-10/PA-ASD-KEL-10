@@ -166,7 +166,7 @@ def tampilanadmin():
         print("= 2. Hapus Billing                =")
         print("= 3. Lihat Seluruh Data Billing   =")
         print("= 4. History Data Billing         =")
-        print("= 5. Exit                         =")
+        print("= 5. Kembali                      =")
         print("===================================")
         pilih = input("Pilih nomor yang ingin kamu lakukan : ")
         if pilih == "1":    
@@ -196,7 +196,7 @@ def tampilanadmin():
                 else:
                     print("Inputan Salah")
         elif pilih == "5":
-            break()
+            break
         else :
             print("masukan inputan dengan benar")
             
@@ -214,7 +214,7 @@ def tampilanuser():
         if pilih == "1":
             data = input("Masukkan data : ")
             user.append(data)
-        elih pilih == "2":
+        elif pilih == "2":
             user.print_list()
         elif pilih == "3":
             break
@@ -241,6 +241,6 @@ def tampilan():
             print("Terimakasih!!!")
             break
         else:
-            print("Pilihan tidak valid. Silahkan coba lagi.)
+            print("Pilihan tidak valid. Silahkan coba lagi.")
                   
 tampilan()
