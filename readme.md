@@ -6,6 +6,9 @@ Kelas : Sistem Informasi B 2022
 ## Deskripsi Program
 Program warnet ini merupakan sebuah program tentang warnet dengan sistem billing yaitu program yang digunakan oleh user untuk meminta billing agar dapat menggunakan komputer pada warnet dengan cara meminta billing pada admin, serta berguna bagi admin karena dirancang untuk membantu mengelola dan menghitung biaya penggunaan komputer pada warnet. Program ini akan memudahkan admin untuk mengatur waktu penggunaan komputer, dan menghitung biaya yang harus dibayar oleh pengguna. Program ini juga dapat meningkatkan efisiensi pengelolaan warnet dan mengurangi potensi kecurangan atau pelanggaran aturan yang dilakukan oleh user.
 
+## Struktur Program
+Pada program ini struktur awal komponennya adalah menu login yang berguna sebagai entri ke dalam salah satu dari komponen menu utama, yaitu menu user dan menu admin. Kemudian, komponen selanjutnya dari program ini adalah penggunaan struktur data Linked List untuk menyimpan data-data barang. Komponen pembantu terdiri dari searching yaitu Jump Search dan sorting yaitu Shell Sort. Selanjutnya, komponen utama yang digunakan adalah menu user untuk proses transaksi antara penjual dan pembeli dan menu admin untuk proses operasi pada data.
+
 ## Fitur dan Fungsionalitas
 ### Menu Tampilan Awal
 1. Login user: fitur ini berfungsi untuk masuk kedalam menu user.
