@@ -140,3 +140,62 @@ def jumpSearch(self,arr, x):
                 a += 1
                 n = n.next
             print(tabelbilling)
+
+#class yang nanti akan digunakan oleh user
+class User:
+    def __init__(self):
+        self.head = None
+
+    #fungsi yang digunakan untuk menambahkan data
+    def append(self, data,jam,harga):
+        new_node = Node(data,jam,harga)
+        if self.head is None:
+            self.head = new_node
+            return
+        current_node = self.head
+        while current_node.next:
+            current_node = current_node.next
+        current_node.next = new_node
+
+    #fungsi untuk menghapus data
+    def hapusbilling(self, position):
+        if self.head is None:
+            return
+        index = 0
+        current = self.head
+        while current.next and index < position:
+            previous = current
+            current = current.next
+            index += 1
+        if index < position:
+            print()
+        elif index == 0:
+            self.head = self.head.next
+        else:
+            previous.next = current.next1
+
+    #mencari data sesuai index
+    def urutan(self, index):
+        current_node = self.head
+        current_index = 0
+        while current_node is not None:
+            if current_index == index:
+                return current_node
+            current_node = current_node.next
+            current_index += 1
+
+    #menampilkan semua data
+    def print_list(self):
+        if self.head is None:
+            print("Tidak ada data")
+            return -1
+        else :
+            tabeldata = PrettyTable()
+            tabeldata.field_names = ["No", "Nama Billing", "Jam", "Harga"]
+            n = self.head
+            a = 1
+            while n is not None:
+                tabeldata.add_row([a, n.data, n.jam, n.harga])
+                a += 1
+                n = n.next
+            print(tabeldata.get_string(sortby="Nama Billing")) 
