@@ -28,22 +28,22 @@ Pada program ini struktur awal komponennya adalah menu login yang berguna sebaga
 4. History Data Billing: fitur ini berfungsi untuk melihat history data billing, pada fitur ini terdapat sub-menu yang terdiri dari 3 fitur, yaitu menampilkan daftar data billing yang terdaftar, menampilkan daftar data billing yang telah dihapus, dan kembali ke menu admin.
 5. Kembali: fitur ini berfungsi untuk kembali ke menu utama.
 
-##Cara penggunaan 
-###Menu Tampilan Awal
+## Cara penggunaan 
+### Menu Tampilan Awal
 Pada menu tampilan awal terdapat 3 pilihan yaitu yang pertama login user, yang kedua login admin, yang ketiga exit: 
 1. Pilih angka “1” jika ingin masuk sebagai user setelah itu akan ditampilkan menu user.
 2. Pilih angka “2” jika ingin masuk sebagai admin setelah itu akan ditampilkan menu admin.
 3. Pilih angka “3” jika ingin keluar dari program.
 
-###Login User 
+### Login User 
 Pada menu user terdapat 4 pilihan yaitu yang pertama bayar billing, yang kedua tampilkan billing yang belum dibayar, yang ketiga ambil billing, yang keempat kembali:
 1.	Pilih angka “1” pada menu tampilan awal untuk login user, lalu akan masuk kedalam menu user 
 2.	Setelah itu untuk mengambil billing user memilih angka “3” lalu program akan meminta anda memasukkan nama billing yang sudah anda daftarkan pada admin
 3.	Lalu untuk  bayar billing tersebut dengan memasukkan nomor billing yang ingin dibayar maka akan langsung terbayar 
 4.	Untuk mengecek billing yang belum dibayar pilih angka “2” 
-5.	Untuk kembali kemenu awal pilih angka “4”
+5.	Untuk kembali kemenu tampilan awal pilih angka “4”
 
-###Login admin 
+### Login admin 
 Pada menu admin terdapat 5 pilihan yaitu yang pertama tambah billing, yang kedua hapus billing, yang ketiga lihat seluruh data billing, yang keempat history data billing, yang kelima kembali:
 1.	Pilih angka “2” pada menu tampilan awal untuk login admin, lalu akan masuk kedalam menu admin
 2.	Setelah itu pilih angka “1” untuk menambahkan billing 
@@ -58,4 +58,4 @@ Pada menu admin terdapat 5 pilihan yaitu yang pertama tambah billing, yang kedua
 diminta untuk memilih menu history, jika anda memilih angka “1” maka akan ditampilkan data billing yang terdaftar 
 11.	Pilihan angka “2” untuk melihat data billing yang dihapus 
 12.	Angka “3” untuk kembali ke menu admin
-13.	Lalu pilihan angka “5” untuk kembali ke menu awal 
+13.	Lalu pilihan angka “5” untuk kembali ke menu tampilan awal 
