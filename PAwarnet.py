@@ -318,3 +318,57 @@ def tampilanadmin():
             break
         else :
             print("masukan inputan dengan benar")
+
+#menu user
+def tampilanuser():
+    while True:
+        print("===========================================")
+        print("=======    MENU USER    ===================")
+        print("===========================================")
+        print("= # MENU                                  =")
+        print("= 1. Bayar Billing                        =")
+        print("= 2. Tampilkan Billing yang belum Dibayar =")
+        print("= 3. Ambil Billing                        =")
+        print("= 4. Kembali                              =")
+        print("===========================================")
+        pilih = input("Masukkan pilihan nomor yang ingin dilakukan : ")
+        if pilih == "1":#menu untuk mmembayar biling yang telah diambil
+            if user.print_list() != -1:
+                membayardatabilling()
+        elif pilih == "2":#menu yang digunakan untuk menampilkan billing yang belum dibayar
+            user.print_list()
+        elif pilih == "3":#menu pengambilang biling
+            nama = ""
+            while nama =="":
+                nama =input("Masukan Nama : ")
+                if nama == "":
+                    print("Masukan Inputan dengan benar")
+            databilling.search(nama)
+        elif pilih == "4":
+            break
+        else:
+            print("Pilihan tidak valid")
+
+#menu role
+def tampilan():
+    while True:
+        print("=================================")
+        print("=======    ASD WARNET    ========")
+        print("=================================")
+        print("= # MENU TAMPILAN AWAL          =")
+        print("= 1. Login user                 =")
+        print("= 2. Login admin                =")
+        print("= 3. Exit                       =")
+        print("=================================")
+        pilih = input("Masukkan pilihan nomor yang ingin dilakukan : ")
+        if pilih == "1":#menu untuk login sebagai user
+            tampilanuser()
+        elif pilih == "2":#menu untuk login sebagai admin
+            tampilanadmin()
+        elif pilih == "3":
+            print("Kamu telah keluar dari program")
+            print("Terimakasih!!!")
+            exit()
+        else:
+            print("Pilihan tidak valid. Silakan coba lagi.")
+tampilan() 
