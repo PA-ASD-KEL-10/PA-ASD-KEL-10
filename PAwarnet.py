@@ -96,3 +96,47 @@ def searchss(self, nama):
                 gap //= 2
         except:
             pass
+
+def jumpSearch(self,arr, x):
+        if self.head is None :
+            self.head = Node(arr)
+            self.head = Node(x)
+        n = len(arr)
+        step = int(n ** 0.5)
+        prev = 0
+        while arr[min(step, n) - 1] < x:
+            prev = step
+            step += int(n ** 0.5)
+            if prev >=n:
+                return -1
+        while arr[prev] < x:
+            prev += 1
+            if prev == min(step, n):
+                return -1
+        if arr[prev] == x:
+            return prev
+        return -1
+    def urutan(self, index):
+        current_node = self.head
+        current_index = 0
+        while current_node is not None:
+            if current_index == index:
+                return current_node
+            current_node = current_node.next
+            current_index += 1
+
+    #tampilkan semua data
+    def tampildatabilling(self):
+        if self.head is None:
+            print("Tidak ada billing")
+            return -1
+        else :
+            tabelbilling = PrettyTable()
+            tabelbilling.field_names = ["No", "Nama Billing",  "Jam", "Harga"]
+            n = self.head
+            a = 1
+            while n is not None:
+                tabelbilling.add_row([a, n.data, n.jam,n.harga])
+                a += 1
+                n = n.next
+            print(tabelbilling)
