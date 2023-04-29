@@ -258,3 +258,63 @@ def membayardatabilling():
         print("Billing dengan nama",b.data,"durasi",b.jam,"dengan harga",b.harga,"Telah dibayar")
     except:
         print("masukkan inputan dengan benar")
+
+#fungsi untuk menampilkan menu admin
+def tampilanadmin():
+    while True:
+        print("===================================")
+        print("=======     MENU ADMIN     ========")
+        print("===================================")
+        print("= # MENU                          =")
+        print("= 1. Tambah Billing               =")
+        print("= 2. Hapus Billing                =")
+        print("= 3. Lihat Seluruh Data Billing   =")
+        print("= 4. History Data Billing         =")
+        print("= 5. Kembali                      =")
+        print("===================================")
+        pilih = input("Pilih nomor yang ingin kamu lakukan : ")
+        if pilih == "1":    #menu tambah billing
+            menambahdatabilling()
+        elif pilih == "2": #menu menghapus data biling
+            if databilling.tampildatabilling() != -1:
+                menghapusdatabilling()
+        elif pilih == "3":    #menu menampilkan data biling
+            print("==========================")
+            print("| 1. Sorting data        |")
+            print("| 2. Searching data      |")
+            print("==========================")
+            i = ""
+            while i!="1" and i!="2":
+                i = input("Ingin melakukan apa? : ")
+            if i == "1":
+                print("Setelah di-sort :")
+                databilling.tampildatabilling()
+            elif i == "2":
+                if databilling.tampildatabilling()!=-1:
+                    nama=""
+                    while nama=="":
+                        nama =input("Masukan Nama : ")
+                    databilling.searchs(nama)
+        elif pilih == "4" :#menu history
+            while True:
+                print("=================================")
+                print("= # MENU HISTORY                =")
+                print("= 1. Billing yang terdaftar     =")
+                print("= 2. Billing yang dihapus       =")
+                print("= 3. Kembali ke menu awal       =")
+                print("=================================")
+                pilih1 = input("Masukkan nomor yang ingin dilakukan : ")
+                if pilih1 == "1":#menu untuk menampilkan data biling, baik yang sudah dihapus maupun belum
+                    print("List data billing yang ada")
+                    tambahdatawarnet.tampildatabilling()
+                elif pilih1 == "2":#menu untuk melihat data biling yang telah dihapus
+                    print("List data billing yang dihapus")
+                    hapusdatawarnet.tampildatabilling()
+                elif pilih1 == "3":
+                    break
+                else:
+                    print("Inputan Salah")
+        elif pilih == "5": 
+            break
+        else :
+            print("masukan inputan dengan benar")
