@@ -65,3 +65,34 @@ class LinkedList:
             current = current.next
             index += 1
         print (0)
+
+def searchss(self, nama):
+        current = self.head
+        ketemu=0
+        index=0
+        while current is not None:
+            if nama == current.data:
+                return 1
+            current = current.next
+            index += 1
+        return 0
+
+    #cari data sesuai index
+    def shellShort(self, data):
+        try:
+            gap = (len(data)//2)
+            a=0
+            while gap > 0 :
+                for i in range(gap,len(data)):
+                    value = data[i]
+                    j = i
+                    while j >= gap and data[j-gap] > value:
+                        data[j] = data[j-gap]
+                        j-=gap
+                    data[j] = value
+                    print(data)
+                print("Iterasi ke",a,": ",data,"dengan gap ",gap )
+                a+=1
+                gap //= 2
+        except:
+            pass
