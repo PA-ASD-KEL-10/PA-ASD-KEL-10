@@ -199,3 +199,62 @@ class User:
                 a += 1
                 n = n.next
             print(tabeldata.get_string(sortby="Nama Billing")) 
+
+#inisialisasi variable
+user = User()
+databilling = LinkedList()
+tambahdatawarnet = LinkedList()
+hapusdatawarnet = LinkedList()
+
+#fungsi untuk menambahkan billing
+def menambahdatabilling():
+    inputA = ""
+    while inputA == "":
+        inputA = input("Masukkan nama billing baru : ")
+        if inputA == "":
+            print("Masukan inputan dengan benar")
+        if databilling.searchss(inputA) == 1:
+            print("Nama Sudah Dipakai")
+            inputA=""
+    b=0
+    c=0
+    while True:
+        try:
+            b = int(input("Masukkan Durasi billing baru(jam) : "))
+            break
+        except:
+            print("Masukan Data Berupa Angka")
+    while True:
+        try:
+            c = int(input("Masukkan Harga billing baru : "))
+            break
+        except:
+            print("Masukan Data Berupa Angka")
+    databilling.tambahbilling(inputA,b,c)
+    tambahdatawarnet.tambahbilling(inputA,b,c)
+
+#fungsi untuk menghapus data billing
+def menghapusdatabilling():
+    try:
+        hapus =""
+        while hapus == "":
+            hapus = input("Masukkan nomor billing : ")
+        hapus = int(hapus)
+        b = databilling.urutan(hapus -1)
+        hapusdatawarnet.tambahbilling(b.data,b.jam,b.harga)            
+        databilling.hapusbilling(hapus -1)
+    except:
+        print("Data Tidak Ditemukan")
+
+#fungsi untuk membayar data billing
+def membayardatabilling():
+    try:
+        hapus =""
+        while hapus == "":
+            hapus = input("Masukkan nomor billing : ")
+        hapus = int(hapus)
+        b = user.urutan(hapus -1)      
+        user.hapusbilling(hapus -1)
+        print("Billing dengan nama",b.data,"durasi",b.jam,"dengan harga",b.harga,"Telah dibayar")
+    except:
+        print("masukkan inputan dengan benar")
