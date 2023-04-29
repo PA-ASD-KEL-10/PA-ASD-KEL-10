@@ -1,21 +1,27 @@
 from prettytable import PrettyTable
+#class untuk menampung data
 class Node:
-    def __init__(self, data):
+    def __init__(self, data,jam=0,harga=0):
         self.data = data
+        self.jam = jam
+        self.harga = harga
         self.next = None
-                
+
+#class yang akan digunakan oleh admin
 class LinkedList:
     def __init__(self):
         self.head = None
-    
-    def tambahbilling(self, value):
+
+    #tambah data
+    def tambahbilling(self, data,jam,harga):
         if self.head is None:
-            self.head = Node(value)
+            self.head = Node(data,jam,harga)
         else: 
-            nodebaru = Node(value)
+            nodebaru = Node(data,jam,harga)
             nodebaru.next = self.head
             self.head = nodebaru
-    
+
+    #hapus data
     def hapusbilling(self, position):
         if self.head is None:
             return
@@ -31,216 +37,31 @@ class LinkedList:
             self.head = self.head.next
         else:
             previous.next = current.next
-    def urutan(self, index):
-        current_node = self.head
-        current_index = 0
 
-        while current_node is not None:
-            if current_index == index:
-                return current_node
-
-            current_node = current_node.next
-            current_index += 1
-            
-    def tampildatabilling(self):
-        if self.head is None:
-            print("Tidak ada billing")
-        else :
-            tabelbilling = PrettyTable()
-            tabelbilling.field_names = ["No", "Nama Billing"]
-            n = self.head
-            a = 1
-            while n is not None:
-                tabelbilling.add_row([a, n.data])
-                a += 1
-                n = n.next
-                print(tabelbilling)
-    
-class linkedlist_menambahdatabilling:
-    def __init__(self):
-        self.head = None
-    
-    def tambahbilling1(self, value):
-        if self.head is None :
-            self.head = Node(value)
-        else : 
-            nodebaru = Node(value)
-            nodebaru.next = self.head
-            self.head = nodebaru
-    
-    def tampildatabilling1(self):
-        if self.head is None:
-            print("Tidak ada billing")
-        else :
-            tabelbilling = PrettyTable()
-            tabelbilling.field_names =  ["No", "Nama Billing"]
-            n = self.head
-            b = 1
-            while n is not None:
-                tabelbilling.add_row([b, n.data])
-                b += 1
-                n = n.next
-            print(tabelbilling)
-            
-class linkedlist_menghapusdatabilling:
-    def __init__(self):
-        self.head = None
-    
-    def tambahbilling2(self, value):
-        if self.head is None :
-            self.head = Node(value)
-        else : 
-            nodebaru = Node(value)
-            nodebaru.next = self.head
-            self.head = nodebaru
-    
-    def tampildatabilling2(self):
-        if self.head is None:
-            print("Tidak ada billing")
-        else :
-            tabelbilling1 = PrettyTable()
-            tabelbilling1.field_names = ["No", "Nama Billing"]
-            n = self.head
-            c = 1
-            while n is not None:
-                tabelbilling1.add_row([c, n.data])
-                c += 1
-                n = n.next
-                print(tabelbilling1)
- 
-class User:
-    def __init__(self):
-        self.head = None
-        
-    def append(self, data):
-        new_node = None(data)
-        if self.head is None:
-            self.head = new_node
-            return
-        current_node = self.head
-        while current_node.next:
-            current_node = current_node.next
-        current_node.next = new_node
-        
-    def print_list(self):
-        if self.head is None:
-            print("Tidak ada data")
-        else :
-            tabeldata = PrettyTable()
-            tabeldata.field_names = ["No", "Nama Data"]
-            n = self.head
-            a = 1
-            while n is not None:
-                tabeldata.add_row([a, n.data])
-                a += 1
-                n = n.next
-            print(tabeldata)
-            
-user = User()
-                
-databilling = LinkedList()
-tambahdatawarnet = linkedlist_menambahdatabilling()
-hapusdatawarnet = linkedlist_menghapusdatabilling()
-
-def menambahdatabilling():
-    inputA = input("Masukkan nama billing baru : ")
-    password = input("Masukkan password baru : ")
-    databilling.tambahbilling(inputA)
-    tambahdatawarnet.tambahbilling1(inputA)
-def menghapusdatabilling():
-    try:
-        hapus = int(input("Masukkan nomor billing : "))
-        b = databilling.urutan(hapus -1)
-        hapusdatawarnet.tambahbilling2(b.data)            
-        databilling.hapusbilling(hapus -1)
-    except:
-        print("masukkan inputan dengan benar")
-
-def tampilanadmin():
-    while True:
-        print("===================================")
-        print("=======     MENU ADMIN     ========")
-        print("===================================")
-        print("= # MENU                          =")
-        print("= 1. Tambah Billing               =")
-        print("= 2. Hapus Billing                =")
-        print("= 3. Lihat Seluruh Data Billing   =")
-        print("= 4. History Data Billing         =")
-        print("= 5. Kembali                      =")
-        print("===================================")
-        pilih = input("Pilih nomor yang ingin kamu lakukan : ")
-        if pilih == "1":    
-            menambahdatabilling()
-        elif pilih == "2":
-            databilling.tampildatabilling()
-            menghapusdatabilling()
-        elif pilih == "3":    
-            databilling.tampildatabilling()
-        elif pilih == "4" :
-            while True:
-                print("===================================")
-                print("= # MENU HISTORY                  =")
-                print("= 1. Billing yang terdaftar       =")
-                print("= 2. Billing yang dihapus         =")
-                print("= 3. Kembali ke menu awal         =")
-                print("===================================")
-                pilih1 = input("Masukkan nomor yang ingin dilakukan : ")
-                if pilih1 == "1":
-                    print("List data billing yang ada")
-                    tambahdatawarnet.tampildatabilling1()
-                elif pilih1 == "2":
-                    print("List data billing yang dihapus")
-                    hapusdatawarnet.tampildatabilling2()
-                elif pilih1 == "3":
-                    break
-                else:
-                    print("Inputan Salah")
-        elif pilih == "5":
-            break
-        else :
-            print("masukan inputan dengan benar")
-            
-def tampilanuser():
-    while True
-        print("================================")
-        print("=======    MENU USER    ========")
-        print("================================")
-        print("= # MENU                       =")
-        print("= 1. Tambah data               =")
-        print("= 2. Tampilkan data            =")
-        print("= 3. Kembali                   =")
-        print("================================")
-        pilih = input("Masukkan pilihan nomor yang ingin dilakukan : ")
-        if pilih == "1":
-            data = input("Masukkan data : ")
-            user.append(data)
-        elif pilih == "2":
-            user.print_list()
-        elif pilih == "3":
-            break
-        else:
-            print("Pilihan tidak valid")
-        
-def tampilan():
-    while True:
-        print("=================================")
-        print("=======    ASD WARNET    ========")
-        print("=================================")
-        print("= # MENU                        =")
-        print("= 1. Login user                 =")
-        print("= 2. Login admin                =")
-        print("= 3. Exit                       =")
-        print("=================================")
-        pilih = input("Masukkan pilihan nomor yang ingin dilakukan : ")
-        if pilih == "1":
-            tampilanuser()
-        elif pilih == "2":
-            tampilanadmin()
-        elif pilih == "3":
-            print("Kamu telah keluar dari program")
-            print("Terimakasih!!!")
-            break
-        else:
-            print("Pilihan tidak valid. Silahkan coba lagi.")
-                  
-tampilan()
+    #cari data
+    def search(self, nama):
+        current = self.head
+        ketemu=0
+        index=0
+        while current is not None:
+            if nama == current.data:
+                b = databilling.urutan(index)
+                hapusdatawarnet.tambahbilling(b.data,b.jam,b.harga)   
+                databilling.hapusbilling(index)
+                user.append(b.data,b.jam,b.harga)
+                return 
+            current = current.next
+            index += 1
+        print (0)
+    def searchs(self, nama):
+        current = self.head
+        ketemu=0
+        index=0
+        while current is not None:
+            if nama == current.data:
+                b = databilling.urutan(index)
+                print("Billing dengan nama", b.data,"durasi",b.jam,"dan harga",b.harga)
+                return 
+            current = current.next
+            index += 1
+        print (0)
